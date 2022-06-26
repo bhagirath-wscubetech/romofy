@@ -1,6 +1,7 @@
 <?php
 $testiArgs = array(
     'post_type' => 'testimonial',
+	'status' => 'publised'
     // Several more arguments could go here. Last one without a comma.
 );
 $testimonial_query = new WP_Query($testiArgs);

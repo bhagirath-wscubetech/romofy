@@ -13608,3 +13608,8 @@ textarea.form-control {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10em 0;
 }
+
+.slider-heading {
+    font-family: "Amatic SC", cursive;
+    font-size: 5em !important;
+}
