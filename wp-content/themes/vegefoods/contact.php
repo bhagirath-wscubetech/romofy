@@ -108,32 +108,40 @@
     </div>
     <?php
     while ( $addressData->have_posts() ) : 
-      $addressData->the_post(); 
+      $addressData->the_post();      
     ?>
-    <div class="row d-flex contact-info">
+    <div class="row mt-3 d-flex contact-info">
       <div class="col-12">
-        <h6><?php the_title()?></h6>
+        <h6><?php the_title()?> </h6>
       </div>
       <div class="col-md-4 d-flex">
         <div class="info bg-white p-4">
           <p>
-            <span class="icon icon-map-marker"></span>
-            <span>Address:</span>
+            <b>
+              <span class="icon icon-map-marker"></span>
+              Address:
+            </b>
             <br />
+            <?php echo get_field( "complete_address",$addressData->post->ID);?>
           </p>
         </div>
       </div>
       <div class="col-md-4 d-flex">
         <div class="info bg-white p-4">
           <p>
-            <span class="icon icon-phone"></span>
-            <span>Phone:</span>
-            <br />
-            <a href="tel:">
+            <b>
+              <span class="icon icon-phone"></span>
+              Phone:
+            </b>
+            <br/>
+            <a href="tel:<?php echo get_field( "primary_contact",$addressData->post->ID);?>">
+              <?php echo get_field( "primary_contact",$addressData->post->ID);?>
             </a>
             ,
-            <a href="">
+            <a href="tel:<?php echo get_field( "secondary_contact",$addressData->post->ID);?>">
+              <?php echo get_field( "secondary_contact",$addressData->post->ID);?>
             </a>
+
             <!-- do_shortcode(' [contact type="mobileno2"]') -->
           </p>
         </div>
@@ -141,11 +149,14 @@
       <div class="col-md-4 d-flex">
         <div class="info bg-white p-4">
           <p>
-            <span class="icon icon-envelope"></span>
-            <span>Email:</span>
+            <b>
+              <span class="icon icon-envelope"></span>
+              <span>Email:</span>
+            </b>
             <br />
-            <a
-              ref="mailto:<?php echo do_shortcode(' [contact type="email"]')?>"><?php echo do_shortcode(' [contact type="email"]')?></a>
+            <a href="tel:<?php echo get_field( "email",$addressData->post->ID);?>">
+              <?php echo get_field( "email",$addressData->post->ID);?>
+            </a>
           </p>
         </div>
       </div>
